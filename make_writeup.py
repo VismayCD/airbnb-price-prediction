@@ -21,7 +21,7 @@ from reportlab.platypus import Image, Paragraph, SimpleDocTemplate, Spacer, Tabl
 # ------------------------------- CONFIG: edit these --------------------------------------
 TEAM = "Vismay Chandra Dev (PES2UG24CS597), Vishwas Hosamath (PES2UG24CS596)"
 SECTION = "5J"
-REPO = "https://github.com/<user>/<repo>"
+REPO = "https://github.com/VismayCD/airbnb-price-prediction"
 SNAPSHOT = "07-10-2026"
 FIG = "results/figure_transfer_summary.png"
 OUT = "writeup.pdf"
