@@ -1,0 +1,7 @@
+pandas>=1.5
+numpy>=1.23
+scipy>=1.9
+scikit-learn>=1.1
+xgboost>=1.7
+matplotlib>=3.6
+reportlab>=4.0   # only needed for make_writeup.py

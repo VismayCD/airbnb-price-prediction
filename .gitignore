@@ -1,0 +1,6 @@
+# raw Kaggle / Inside Airbnb CSVs are large and are not committed
+data/
+venv/
+__pycache__/
+*.pyc
+.DS_Store
