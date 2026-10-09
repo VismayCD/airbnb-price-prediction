@@ -19,8 +19,7 @@ Pipeline overview
 
 Usage
 -----
-    python airbnb_price.py --nyc data/nyc.csv --paris data/paris.csv \
-                           --berlin data/berlin.csv --experiment all
+    python airbnb_price.py --nyc data/nyc.csv --paris data/paris.csv --berlin data/berlin.csv --experiment all
 """
 
 import argparse
@@ -55,9 +54,9 @@ except ImportError:                        # keeps the script runnable without x
 SEED = 42
 PRICE_CAP = 500                            # paper: drop listings > $500/night (~1% of data)
 
-# --------------------------------------------------------------------------- #
-# Column definitions (names follow the Inside Airbnb / Kaggle 96-column schema)
-# --------------------------------------------------------------------------- #
+
+# Column definitions (Kaggle 96-column schema)
+
 MONEY_COLS = ["price", "security_deposit", "cleaning_fee", "extra_people"]
 ZERO_FILL = ["security_deposit", "cleaning_fee"]   # missing fee == no fee -> 0
 CONTINUOUS = [
