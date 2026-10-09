@@ -1,25 +1,22 @@
 """
 Predicting Airbnb Listing Price Across Cities (NYC, Paris, Berlin)
-===================================================================
-Re-implementation of the pipeline in Luo, Zhou & Zhou (2019).
 
-Pipeline overview
------------------
- 1. load_city()        -> parse "$1,200.00" strings, drop bad prices, optional $500 cap
- 2. split_city()       -> 7:2:1 train/val/test split
- 3. FeatureBuilder     -> builds the 5 feature groups (fit on TRAIN only, so no leakage):
-        C = continuous  (impute, drop correlated, standardise)
-        I = 2-degree interaction terms of the continuous features
-        O = categorical (one-hot) + list features (amenities, host_verifications)
-        T = text        (TF-IDF on uni+bigrams -> TruncatedSVD to 50 dims per column)
-        D = date        (days since earliest date, mean-imputed)
- 4. make_model()       -> Ridge, KNN, RandomForest, XGBoost, MLP (neural network)
- 5. run_experiment()   -> fit, evaluate MSE and R^2 on train/val/test
- 6. exp_*()            -> one function per results table in the paper
+Pipeline overview:
+1. load_city()        -> parse "$1,200.00" strings, drop bad prices, optional $500 cap
+2. split_city()       -> 7:2:1 train/val/test split
+3. FeatureBuilder     -> builds the 5 feature groups (fit on TRAIN only, so no leakage):
+    C = continuous  (impute, drop correlated, standardise)
+    I = 2-degree interaction terms of the continuous features
+    O = categorical (one-hot) + list features (amenities, host_verifications)
+    T = text        (TF-IDF on uni+bigrams -> TruncatedSVD to 50 dims per column)
+    D = date        (days since earliest date, mean-imputed)
+4. make_model()       -> Ridge, KNN, RandomForest, XGBoost, MLP (neural network)
+5. run_experiment()   -> fit, evaluate MSE and R^2 on train/val/test
+6. exp_*()            -> one function per results table in the paper
 
-Usage
------
-    python airbnb_price.py --nyc data/nyc.csv --paris data/paris.csv --berlin data/berlin.csv --experiment all
+Usage:
+python airbnb_price.py --nyc data/nyc.csv --paris data/paris.csv --berlin data/berlin.csv --experiment all
+
 """
 
 import argparse
