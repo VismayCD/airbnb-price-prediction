@@ -9,7 +9,7 @@ unseen one. The task follows *Predicting Airbnb Listing Price Across Different C
 (Luo, Zhou, Zhou, 2019); this is an independent re-implementation with additional
 transfer-learning diagnostics.
 
-## Key results (NYC unless stated; full tables in `docs/writeup.pdf`)
+## Key results (NYC unless stated; full tables in the report under `docs/`)
 | Experiment | Result |
 |---|---|
 | Best model (continuous features, raw price, ≤ $500) | XGBoost, test R² 0.740 (RF 0.717, NN 0.666/0.686, KNN 0.607, Ridge 0.446) |
@@ -19,8 +19,8 @@ transfer-learning diagnostics.
 
 ## 1. Setup
 ```bash
-git clone https://github.com/<user>/<repo>.git
-cd <repo>
+git clone https://github.com/VismayCD/airbnb-price-prediction.git
+cd airbnb-price-prediction
 python -m venv venv
 venv\Scripts\activate          # Windows   (Linux/macOS: source venv/bin/activate)
 pip install -r requirements.txt
@@ -57,9 +57,8 @@ without re-running). Everything is seeded (`SEED = 42`).
 ```
 airbnb_price.py   data cleaning, FeatureBuilder, models, all experiments
 check_data.py     reports which paper features a CSV contains and how complete they are
-make_writeup.py   builds the 2-page PDF write-up (needs reportlab)
 results/          CSV tables + figures produced by the experiments
-docs/             write-up (PDF) and presentation slides
+docs/             project report (PDF, plus the Word source)
 requirements.txt  Python dependencies
 ```
 
